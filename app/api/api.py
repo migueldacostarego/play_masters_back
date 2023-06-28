@@ -1,4 +1,3 @@
-from app.db.models import *
 from app.db.db_caller import call_sp
 
 
