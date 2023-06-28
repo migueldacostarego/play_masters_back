@@ -1,14 +1,9 @@
-from typing import Union
 from fastapi import FastAPI
 from app.db.models import *
 from app.api import api
 
 app = FastAPI()
 
-
-@app.get("/")
-def root():
-    return
 
 @app.get("/api/user/{user_id}/info")
 def user_info(user_id):
