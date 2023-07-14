@@ -7,3 +7,4 @@ class UserCreate(BaseModel):
     company: str
     email: str
     password: str
+

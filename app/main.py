@@ -1,4 +1,5 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request, Depends
+from fastapi.security import OAuth2PasswordBearer
 from app.db.models import *
 from app.api import api
 
@@ -20,8 +21,14 @@ def user_game_info(user_id, game_id):
     return {user_id, game_id}
 
 
+@app.get("/api/user/{email}/login/{password}")
+def user_login(email, password):
+    return {email, password}
+
+
 @app.post("/api/user/register", status_code=201)
 def user_register(user_info: UserCreate):
+    print(str(Request.method.value))
     return api.user_register(user_info.username, user_info.company, user_info.email, user_info.password)
 
 
