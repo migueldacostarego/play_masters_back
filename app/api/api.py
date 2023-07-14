@@ -18,15 +18,15 @@ def user_game_info(user_id: str, game_id: str):
 
 
 def user_register(username, company, email, password):
-    return call_sp('sp_register', email, username, company, password)
+    return call_sp_create('sp_register', email, username, company, password)
 
 
 def user_reset_password():
     return call_sp('sp_reset_pwd')
 
 
-def user_forgot_password():
-    return call_sp()
+def user_forgot_password(email: str):
+    return call_sp('sp_forgot_pwd', email)
 
 
 def user_change_password():

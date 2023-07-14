@@ -28,7 +28,6 @@ def user_login(email, password):
 
 @app.post("/api/user/register", status_code=201)
 def user_register(user_info: UserCreate):
-    print(str(Request.method.value))
     return api.user_register(user_info.username, user_info.company, user_info.email, user_info.password)
 
 
@@ -40,7 +39,6 @@ def user_reset_password(user_id: str):
 
 @app.post("/api/user/forgot_password", status_code=201)
 def user_forgot_password(email: str):
-    print(email)
     return
 
 

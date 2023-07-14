@@ -20,7 +20,7 @@ def call_sp_create(procedure_name, *args):
         param_placeholders = ', '.join(['?' for _ in args])
         call_statement = f"EXEC {procedure_name} {param_placeholders}"
         cursor.execute(call_statement, args)
-        # cursor.commit()
+        cursor.commit()
         results = cursor.fetchall()
 
         return [dict(zip([column[0] for column in cursor.description], row)) for row in results]
