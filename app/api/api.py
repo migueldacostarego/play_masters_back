@@ -1,4 +1,4 @@
-from app.db.db_caller import call_sp
+from app.db.db_caller import call_sp, call_sp_create
 
 
 def user_info(user_id: str):
@@ -6,6 +6,7 @@ def user_info(user_id: str):
 
 
 def user_login(email: str, password: str):
+    print(email, password)
     return call_sp('sp_login', email, password)
 
 

@@ -23,7 +23,7 @@ def user_game_info(user_id, game_id):
 
 @app.get("/api/user/{email}/login/{password}")
 def user_login(email, password):
-    return {email, password}
+    return api.user_login(email, password)
 
 
 @app.post("/api/user/register", status_code=201)

@@ -48,9 +48,11 @@ def call_sp(procedure_name, *args):
     try:
         param_placeholders = ', '.join(['?' for _ in args])
         call_statement = f"EXEC {procedure_name} {param_placeholders}"
+        print(call_statement)
         cursor.execute(call_statement, args)
         # cursor.commit()
         results = cursor.fetchall()
+        print('11',cursor.fetchone())
 
         return [dict(zip([column[0] for column in cursor.description], row)) for row in results]
 
