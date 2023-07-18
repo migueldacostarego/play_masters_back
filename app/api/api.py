@@ -2,41 +2,41 @@ from app.db.db_caller import call_sp, call_sp_create
 
 
 def user_info(user_id: str):
-    return call_sp('sp_get_users', user_id)
+    return 0
 
 
 def user_login(email: str, password: str):
     print(email, password)
-    return call_sp('sp_login', email, password)
+    return 0
 
 
 def user_games(user_id: str):
-    return call_sp('', user_id)
+    return 0
 
 
 def user_game_info(user_id: str, game_id: str):
-    return call_sp('sp_getAllGamesAndBets', user_id, game_id)
+    return 0
 
 
 def user_register(username, company, email, password):
-    return call_sp_create('sp_register', email, username, company, password)
+    return 0
 
 
 def user_reset_password():
-    return call_sp('sp_reset_pwd')
+    return 0
 
 
 def user_forgot_password(email: str):
-    return call_sp('sp_forgot_pwd', email)
+    return 0
 
 
 def user_change_password():
-    return call_sp()
+    return 0
 
 
 def user_ban():
-    return call_sp()
+    return 0
 
 
 def user_delete():
-    return call_sp()
+    return 0
